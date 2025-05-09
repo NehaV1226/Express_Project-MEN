@@ -1,0 +1,59 @@
+body {
+    background-color: #fdfcff;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .btn-lavender {
+    background-color: #b197fc;
+    color: white;
+    border: none;
+  }
+  
+  .btn-lavender:hover {
+    background-color: #9c87ff;
+  }
+  
+  .card-title {
+    color:blueviolet;
+  }
+  
+  footer {
+    color: #6c757d;
+  }
+  .btn-lavender {
+    background-color: #d8bfea;
+    color: white;
+  }
+  .btn-lavender:hover {
+    background-color: #c19ee0;
+  }
+  .card-img-fixed {
+  width: 100%;
+  height: 200px; /* Fixed height for all card images */
+  object-fit: cover; /* Crop and center image while maintaining aspect */
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color: rgb(195, 35, 179); /* lavender-ish */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: rgb(195, 35, 179); /* text color on hover */
+}
+
+.nav-link:hover::after {
+  width: 100%; /* underline expands on hover */
+}

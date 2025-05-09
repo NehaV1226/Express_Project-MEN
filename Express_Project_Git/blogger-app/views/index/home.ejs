@@ -1,0 +1,27 @@
+<div class="container">
+  <h1 style="text-align: center">Latest Blogs</h1>
+  <br />
+  <div class="row">
+    <% blogs.forEach(blog => { %>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="<%= blog.imageUrl %>"
+          class="card-img-top card-img-fixed"
+          alt="Image"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 style="color: blueviolet"><%= blog.title %></h5>
+          <p class="card-text"><%= blog.description.substring(0, 100) %>...</p>
+          <div class="mt-auto">
+            <a href="/blog/view/<%= blog._id %>" class="btn btn-lavender"
+              >Read More</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% }) %>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container mt-4">
+  <h2 style="text-align: center">Edit Blog</h2>
+  <br />
+  <form action="/blog/edit/<%= blog._id %>" method="POST">
+    <h5 style="color: rgb(195, 35, 179)">Title:</h5>
+    <input
+      class="form-control my-2"
+      type="text"
+      name="title"
+      value="<%= blog.title %>"
+      required
+    />
+    <br />
+    <h5 style="color: rgb(195, 35, 179)">Image URL:</h5>
+    <input
+      class="form-control my-2"
+      type="text"
+      name="imageUrl"
+      value="<%= blog.imageUrl %>"
+    />
+    <br />
+    <h5 style="color: rgb(195, 35, 179)">Description:</h5>
+    <textarea class="form-control my-2" name="description" rows="7">
+<%= blog.description %></textarea
+    >
+    <br />
+    <h5 style="color: rgb(195, 35, 179)">Category:</h5>
+    <input
+      class="form-control my-2"
+      type="text"
+      name="category"
+      value="<%= blog.category %>"
+    />
+    <button class="btn btn-lavender mt-2">Update</button>
+  </form>
+</div>

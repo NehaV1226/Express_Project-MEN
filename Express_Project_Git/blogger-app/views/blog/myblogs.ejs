@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center mt-4 mb-3">
+    <h2>My Blogs</h2>
+    <a href="/blog/create" class="btn btn-primary">+ Create Blog</a>
+  </div>
+
+  <% if (blogs.length === 0) { %>
+  <p>No blogs found. Start by creating one!</p>
+  <% } %> <% blogs.forEach(blog => { %>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title"><%= blog.title %></h5>
+      <p class="text-muted">
+        <%= new Date(blog.createdAt).toLocaleString() %> | Category: <%=
+        blog.category %> | Comments: <%= blog.comments.length %>
+      </p>
+      <img
+        src="<%= blog.imageUrl %>"
+        class="img-fluid mb-2"
+        style="max-height: 200px"
+        alt="Blog Image"
+      />
+      <p class="card-text"><%= blog.description.substring(0, 100) %>...</p>
+      <a
+        href="/blog/view/<%= blog._id %>"
+        class="btn btn-sm btn-outline-primary"
+        >View</a
+      >
+      <a
+        href="/blog/edit/<%= blog._id %>"
+        class="btn btn-sm btn-outline-warning"
+        >Edit</a
+      >
+      <a
+        href="/blog/delete/<%= blog._id %>"
+        class="btn btn-sm btn-outline-danger"
+        onclick="return confirm('Are you sure?')"
+        >Delete</a
+      >
+    </div>
+  </div>
+  <% }) %>
+</div>
